@@ -1,0 +1,26 @@
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form</title>
+</head>
+<body>
+
+
+
+    <div>
+        <form method="POST">
+            {% csrf_token %}
+
+                {{ investment_form | crispy }}
+            <div class=container>
+                <button method='submit'>Invest</button>
+            </div>
+        </form>
+    </div>
+    <a href="{% url 'home' %}">Go Back To Home</a>
+
+
+
+</body>
+</html>

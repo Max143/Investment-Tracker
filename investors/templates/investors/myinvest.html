@@ -1,0 +1,38 @@
+{% extends 'investors/inventorybase.html' %}
+
+
+
+{% block content %}
+    
+  <div class="container">
+        {% if user.is_authenticated %}
+            <h2>Investor Name: {{ request.user }}</h2>
+            {% for invest in investors %}
+            <table>
+              <tr>
+                <th>Amount Invested</th>
+                <th>Date</th>
+                <th>Rate Of Interest</th>
+                <th>Return</th>
+                <th>Profit</th>
+              </tr>
+
+             <tr>
+              
+               <th>{{ invest.amount }}</th>
+               <th>{{ invest.timestamp }}</th>
+               <th>{{ invest.rate }}</th>
+               
+               <th>None</th>
+               <th>None</th>  
+           
+             </tr>
+             <br> 
+            </table>
+
+              {% endfor %}
+        {% endif  %}
+
+
+
+{% endblock %}

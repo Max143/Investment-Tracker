@@ -1,0 +1,42 @@
+{% extends 'investors/inventorybase.html' %}
+
+{% block title %} 
+    Investment and History
+{% endblock title %}
+
+
+{% block content %}
+
+
+{% for investors in all_investors %}
+       <h2>Investor Name: {{ investors.name }}</h2>
+            
+            {% for investment in total_investment %}
+            <table>
+              <tr>
+                <th>Investor Name</th>
+                <th>Amount Invested</th>
+                <th>Date</th>
+                <th>Rate Of Interest</th>
+                <th>Return</th>
+                <th>Profit</th>
+                <th>Transfer</th>
+              </tr>
+
+             <tr>
+               <th>{{ investors.name }}</th>
+               <th>{{ investment.amount }}</th>
+               <th>{{ investment.timestamp }}</th>
+               <th>{{ investment.rate }}</th>              
+               <th>None</th>
+               <th>None</th>  
+              <th><button href='#'>Pay</button></th>   
+             </tr>
+             <br> 
+            </table>
+
+              {% endfor %}
+{% endfor %}
+
+
+{% endblock content %}
