@@ -2,6 +2,11 @@
 
 Web Application that allow to investors to invest and track their investment record dynamically. 
 
+Instruction :
+python manage.py makemigration investors
+python manage.py migrate
+python manage.py createsuperuser
+
 
 
 
